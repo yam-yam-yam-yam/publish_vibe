@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    box-sizing: border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    margin:0px;
+    display:flex;
+    font-size:0px;
+}
+
+//font start
+
+$font-big:22px;
+$font-middle:18px;
+$font-small:11px;
+
+strong{
+    font-size:$font-big;
+    margin:5px;
+}
+.small{
+    font-size:$font-small;
+    font-weight:200;
+    color:#888888;
+    cursor:initial;
+}
+b{
+    font-weight: 900;   
+}
+
+
+//font end
+
+nav{
+    position:fixed;
+    width:230px;
+    height:100%;
+    background-color: #000000;
+    color:#c5c5c5;
+    // padding-inline:21px;
+    box-shadow: 1px 0px 0px #1a1a1a;
+    font-weight:100;
+
+    //scroll
+    section#menus:hover::-webkit-scrollbar{
+        width:6px;
+    }
+    section#menus::-webkit-scrollbar{
+        width:0px;
+        background-color: grey;
+        border-radius: 15px;
+    }
+    section#menus::-webkit-scrollbar-thumb {
+        background-color: grey;
+        border-radius: 15px;
+    }
+        
+    section#menus::-webkit-scrollbar-track {
+        background-color: #2f3542;
+        border-radius: 15px;
+    }
+
+    //VIBE베뉴
+    header{
+        height:70px;
+        display:flex;
+        align-items: center;
+        align-content: center;
+        padding-inline:21px;
+        margin-inline:20px;
+        box-shadow: 0px 0.5px 0.5px rgb(44, 44, 44);
+        color:#ffffff;
+        cursor: pointer;
+    }
+
+        //회원메뉴
+        article#user{
+            position:relative;
+            padding-block:21px;
+            margin-inline:20px;
+            color:#b8b8b8;
+            font-weight:300;
+            box-shadow: 0px 0.5px 0.5px rgb(44, 44, 44);
+            cursor: pointer;
+            list-style-type:none;
+
+            article#user_menu{
+                display:none;
+                position: absolute;
+                top:50px;
+                right: 30%;
+                width:120px;
+                background-color:#ffffff;
+                border-radius: 5px;
+                color:#000000;
+                list-style-type:none;
+                padding-block:20px;
+
+                li{
+                    padding: 5px 20px;
+                    font-weight:100;
+                    color:#000000;
+                }
+                li:hover{
+                    background-color:#e7e7e7;
+                }
+            }
+        }
+        article#user:hover{
+                color:#ffffff;
+                article#user_menu{
+                    display:block;
+                }
+        }
+
+    section#menus{
+        height:75%;
+        overflow-y: scroll;
+        padding:20px 21px;
+        
+        //메뉴 공통
+        section{
+            padding-block:20px;
+
+            article{
+                font-weight:300;
+                cursor: pointer;
+            }
+            article:hover{
+                color:#ffffff;
+            }
+            article#click{
+                color:#f80000;
+                font-weight:500
+            }
+            article#click:hover{
+                color:#f80000be;
+                font-weight:300;
+            }
+
+        }
+
+        //메뉴 개별
+        section#menu1{
+            article{
+                font-size:$font-middle;
+                padding-block: 5px;
+            }
+            article::before{
+                content: "";
+                display:inline-block;
+                width:15px;
+                margin-inline:3px;
+                height:10px;
+                background: url("./img/musical-note.svg");
+                background-size: 100% 100%;
+            }
+        }
+        section#menu2{
+            box-shadow: 0px 0.5px 0.5px rgb(44, 44, 44);
+            article{
+                font-size:calc(18px - 2px);
+                //font-size:calc($font-middle - 2px);
+                padding-block: 5px;
+            }
+            .small{
+                font-size:$font-small;
+                cursor:initial;
+            }
+            .small:hover{
+                color:#888888;
+            }
+        }
+        section#menu3{
+            article{
+                font-size:calc(18px - 2px);
+                padding-block: 5px;
+            }
+        }    
+    }
+
+    section#footer{
+        position:sticky;
+        top:0px;
+        padding:10px 21px;
+        box-shadow: 0px -15px 15px 0px rgb(27, 27, 27);
+        button{
+            width:100%;
+            padding-block: 5px;
+            text-align: center;
+            font-size:16px;
+            font-weight:100;
+            background-color:#000000;
+            color:#cfcfcf;
+            border:0.1px solid #494949;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover{
+            border:0.1px solid #ffffff;
+            color:#ffffff;
+        }
+    }
+}
+
+
+main{
+    position:relative;
+    left:230px;
+    background-color:#ffffff;
+    //공통
+    article{
+        width:100%;
+        color:#000000;
+    }
+    //개별
+    article.main_header{
+        display:flex;
+        justify-content: center;
+        height:400px;
+        background-color:#000000;
+        padding-block:40px;
+
+        section{
+            display:flex;
+            height:100%;
+            background-color:#0b0b0b;
+            cursor: pointer;
+
+            article#main_header_img{
+                width:60%;
+                height:100%;
+                background:url("./img/main_image.png");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            article#main_header_content{
+                display:block;
+                padding:70px 30px;
+                em{
+                    padding: 5px 10px;
+                    width:85px;
+                    border-radius: 20px;
+                    background-color:#663d3d;
+                }
+                b{
+                    color:#ffffff;
+                    font-size:22px;
+                }
+                b:hover{
+                    text-decoration: underline;
+                }
+                span{
+                    color:#5a5a5a;
+                    //유동적인 width설정에서의 ...처리
+                    overflow: hidden;
+                    -webkit-line-clamp : 2; 
+                    word-wrap : brek-word; 
+                    display : -webkit-box;
+                    -webkit-box-orient: vertical;
+                    //
+                }
+                time{
+                    color:#5a5a5a;
+                }
+            }
+            article#main_header_content > *{
+                width:100%;
+                display:block;
+                margin-block:5px;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    article.main_categorys{
+        display:flex;
+        align-content: center;
+        align-items: center;
+        flex-direction:column;
+        
+        //공통
+        section.category{
+            width:1200px;
+            padding-block:40px;
+            overflow: hidden;
+            border-bottom:1px solid #e0e0e0;
+            .tag{
+                display:inline-block;
+                width:initial;
+                font-weight:500;
+                font-size:17px;  
+                margin-bottom:10px;
+            }
+            .link{
+                cursor: pointer;
+            }
+            .link:hover{
+                text-decoration: underline;
+            }
+            .link::after{
+                content:"";
+                display:inline-block;
+                width:12px;
+                height:12px;
+                background-image: url("./img/next.svg");
+                background-size: 100% 100%;
+            }
+            article{
+                display: grid;
+                grid-gap: 12px;
+                grid-auto-flow: column;
+                li{
+                    .img{
+                        border:1px solid black;
+                    }
+                    .title{
+                        font-size:15px;
+                        font-weight:500;
+                        cursor: pointer;
+                    }
+                    .title:hover{
+                        text-decoration: underline;
+                    }
+                    .etc{
+                        height:30px;
+                        color:#a5a5a5;
+                        font-size:13px;
+                        font-weight:500;
+                    }    
+                }
+            }
+        }
+        //개별
+        %listExtend{
+            height:500px;
+            article{
+                li{
+                    display:inline-block;
+                    width:310px;
+                    height:385px;
+                    .img{
+                        border:1px solid black;
+                        height:310px;
+                    }
+                    .etc{
+                        cursor: pointer;
+                    }    
+                    .etc:hover{
+                        text-decoration: underline;
+                    } 
+                }
+            }
+        }
+        //li_W를 인자중 맨 앞에 두고 기본값을 설정하는법
+        @mixin li_and_imgSize ($li_H,$img,$li_W:310px){
+            li{
+                width:$li_W;
+                height : $li_H;
+                .img{
+                    height : $img;
+                }
+            }
+        }
+        section#magazine{
+            @extend %listExtend;
+            article{
+                li{
+                    .etc{
+                        cursor: initial;
+                    }    
+                    .etc:hover{
+                        text-decoration: initial;
+                    }
+                }
+            }
+
+        }
+        section#news{
+            @extend %listExtend;
+            height:340px;
+            article{
+                @include li_and_imgSize(250px,180px);
+            }
+        }
+        section#playlist{
+            @extend %listExtend;
+            height:340px;
+            article{
+                display:flex;
+                //리스트가 크기를 초과하여 스크롤이 생기지 않을 시 flex;
+                @include li_and_imgSize(250px,180px,210px);
+            }
+        }
+        section#best_playlist{
+            @extend %listExtend;
+        }
+        section#vibe{
+            @extend %listExtend;
+            border-bottom:none;
+        }
+    }
+
+    footer{
+        position:relative;
+        left:1px;
+        width:calc(100% - 1px);
+        background-color: #f2f2f2;
+
+        %footer_font{
+            padding-inline: 5px;
+            font-weight:300;
+            font-size:14px;
+            //dl속성 import
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        article{
+            width:100%;
+            border-top:1px solid rgb(236, 236, 236);
+            padding-inline:20px;
+            span{
+                display:flex;
+                dl{
+                    color:#939393;
+                    @extend %footer_font;  
+                }
+                dt{
+                    color:#000000;
+                    @extend %footer_font;
+                }
+                li{
+                    list-style-type: none;
+                    @extend %footer_font;
+                    color:#939393;
+                }
+                .active{
+                    cursor: pointer;
+                }
+                .active:hover{
+                    text-decoration: underline;
+                }
+            }
+
+        }
+        #footer_top{
+            height:55px;
+        }
+        #footer_bottom{
+            height:130px;
+         }
+    }
+}
+
+
+
+@media screen and (max-width:770px) {
+    nav{
+        display:none;
+    }
+    main{
+        width:100%;
+        left:0px;
+        article{
+            section{
+                width:100% !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:770px) {
+    main{
+        width: calc(100% - 230px);
+    }
+}
+@media screen and (max-width:1500px) {
+    main{
+        article{
+            section{
+                width:90% !important;
+            }
+        }
+    }
+}
+@media screen and (min-width:1500px) {
+    main{
+        article{
+            section{
+                width:1200px;
+            }
+        }
+    }
+}
